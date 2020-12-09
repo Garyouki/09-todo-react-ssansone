@@ -4,9 +4,9 @@ import './NewTodo.css';
 class NewTodo extends Component {
   render() {
     return (
-        <div id="myTodoForm">
+        <div id="todo">
           <form>
-            <input type="text" />
+            <input id= "todo" type="text" />
           </form>
         </div>
       );

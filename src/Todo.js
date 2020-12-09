@@ -5,9 +5,13 @@ class Todo extends Component {
   render() {
     return (
       
-<div id="01234" className="todo">
-        <button className="complete">Check</button>
-        <p>Do A thing</p>
+<div id="todo" className="todo">
+        <button id= "add" className="add">Add to List</button>
+        <p>Do A thing
+        <input type="checkbox"></input>
+        <button id= "delete" className="delete">Delete</button>
+
+        </p>
       </div>
     );
   }
