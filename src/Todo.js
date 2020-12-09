@@ -8,7 +8,7 @@ class Todo extends Component {
 <div id="todo" className="todo">
         <button id= "add" className="add">Add to List</button>
         <p>Do A thing
-        <input type="checkbox"></input>
+        <input type="checkbox" id="checked"></input>
         <button id= "delete" className="delete">Delete</button>
 
         </p>

@@ -6,7 +6,7 @@ class NewTodo extends Component {
     return (
         <div id="todo">
           <form>
-            <input id= "todo" type="text" />
+            <input id= "todo" type="text" placeholder="Add To-Do..." />
           </form>
         </div>
       );
