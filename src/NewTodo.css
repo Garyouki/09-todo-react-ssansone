@@ -13,13 +13,6 @@ body {
  
  }
  
- #todo {
-     display: block;
-     margin-left: auto;
-     margin-right: auto;
-     height: 20px;
-     width: 300px;
- }
  
  #add {
      display: block;
@@ -38,25 +31,6 @@ body {
      background-color: #EAB464;
  }
  
- #todo {
-     font-size: 25px;
-     border: none;
-     border-radius: 4px;
-     line-height: 40px;
-     margin-bottom: 20px;
-     padding: 10px;
- }
- 
- :checked p {
-     text-decoration: line-through;
-     color: purple;
- }
- ul {
-     font-size: 20px;
-     
- }
- 
- 
  p li {
      list-style-type: none;
      margin-bottom: 20px;
@@ -74,28 +48,16 @@ body {
      margin-right: 20px;
  }
  
- button {
-     color: white;
-     background-color: #231123;
-     border-radius: 4px;
-     text-decoration: none;
-     border:none;
-     padding: 10px;
-     margin-left: 20px;
- }
- 
- button:hover {
-     background-color: #EAB464;
- }
  
  input {
-     width: 20px;
-     height: 20px;
+     width: 200px;
+     height: 30px;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
      
  }
+
  
- #checked {
-     margin-left: 20px;
- }
  
  
