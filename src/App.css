@@ -72,25 +72,27 @@ body {
 }
 
 #check, #delete {
-    /* display: inline-block; */
+
     display: block;
      margin-left: auto;
      margin-right: auto;
-    
      
 }
 
-#delete{
- margin-top: 10px;
+
+#check {
+    margin-top: 50px;
 }
 
 #sort:hover {
     background-color: #EAB464;
 }
 
-:check p {
-    text-decoration: line-through;
-    color: purple;
+.text {
+    margin-top: 0px;
+    line-height: 20px;
 }
+
+
 
 

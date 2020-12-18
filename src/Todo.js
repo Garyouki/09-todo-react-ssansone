@@ -3,14 +3,13 @@ import './Todo.css';
 
 class Todo extends Component {
 
+    //referenced code snippets for 90% of project as well as my assignment 8 code
+  //https://gist.github.com/kraigh/fb524c6db6cce065c2ba344724d3c993
+
     constructor(props) {
         super(props);
-       
-        this.state = {
-            completed: this.props.completed
-        }
         this.check = this.check.bind(this);
-       
+        // this.deleteTodo = this.deleteTodo.bind(this);
     }
 
     check(event) {
@@ -19,18 +18,23 @@ class Todo extends Component {
         var data = {
         completed: true
     };
-    var toCheck = event.target.parentNode;
-    
+
+    //event.target.parentNode from assignment 8
+    var toCheck = event.target.parentNode.id;
+    console.log(event.target.parentNode);
     var xhttp = new XMLHttpRequest();
     
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             console.log("check");
+
             self.setState({
                 completed:true
     });
 
-} else if (this.readyState === 4) {
+} 
+
+else if (this.readyState === 4) {
 
     // this.status !== 200, error from server
     console.log("no check");
@@ -47,7 +51,9 @@ class Todo extends Component {
 
 
   render() {
-
+    this.state = {
+        completed: this.props.completed
+    }
     var className = "todo";
   if (this.state.completed) {
     className = "todo completed";
@@ -55,10 +61,12 @@ class Todo extends Component {
 
     return (
     
-<div id={this.props.id} className={className}>
+<div id={this.props.id}>
         
+       
+
+        <input id= "check" className="check" type="checkbox" onClick={this.check}></input>
         <p className="text"> {this.props.text} </p>
-        <button id= "check" className="check" type="checkbox" onClick={this.check}></button>
         <button id= "delete" className="delete" onClick={this.props.deleteTodo}>Delete</button>
 
         

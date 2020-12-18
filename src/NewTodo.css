@@ -31,15 +31,10 @@ body {
      background-color: #EAB464;
  }
  
- p li {
-     list-style-type: none;
-     margin-bottom: 20px;
-     margin-top: 40px;
- }
- 
+
  p {
      text-align: center;
-     display: inline-block;
+     /* display: inline-block; */
      position: relative;
      width: 100%;
      font-size: 30px;

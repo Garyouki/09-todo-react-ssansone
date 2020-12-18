@@ -5,8 +5,13 @@ import NewTodo from './NewTodo';
 
 class App extends Component {
   
+
+  //referenced code snippets for 90% of project as well as my assignment 8 code
+  //https://gist.github.com/kraigh/fb524c6db6cce065c2ba344724d3c993
+
   constructor(props) {
     super(props);
+    
     this.state = {
         todos: [], input: ''
     };
@@ -22,7 +27,10 @@ class App extends Component {
   addTodo(event) {
     event.preventDefault();
     var self = this;
-    var data = {text: this.state.input};
+
+    const newTodoText = this.state.input;
+    var data = {text: newTodoText};;
+    
     var xhttp = new XMLHttpRequest();
 
 // Response handler
@@ -31,7 +39,7 @@ xhttp.onreadystatechange = function() {
     // Wait for readyState = 4 & 200 response
     if (this.readyState === 4 && this.status === 200) {
 
-
+     
         // parse JSON response
         self.setState({
           todos: [...self.state.todos, JSON.parse(this.responseText)]
@@ -57,6 +65,8 @@ xhttp.send(JSON.stringify(data));
 deleteTodo(event) {
   
   var self = this;
+
+  //event.target.parentNode from assignment 8
   var id = event.target.parentNode.id;
   var xhttp = new XMLHttpRequest();
 
@@ -93,12 +103,13 @@ xhttp.send();
 componentDidMount() {
   //Make initial AJAX call to list todos
   
-  var self = this;
+  const self = this;
   var xhttp = new XMLHttpRequest();
 
 xhttp.onreadystatechange = function() {
   if (this.readyState === 4 && this.status === 200) {
-      var todos = JSON.parse(xhttp.responseText);
+      
+    var todos = JSON.parse(this.responseText);
       self.setState({todos: todos});
      
       console.log(todos);
@@ -138,17 +149,15 @@ onChange(event) {
       
 <div className = "App">
 <h1> Samantha's To-Do List: </h1>
-<section id="myTodos">
+
 <NewTodo addTodo={this.addTodo} newTodo={this.newTodo} onChange={this.onChange} input={this.state.input} />
 <button id= "sort" className="sort" onClick={this.sort}>Sort List Alphabetically</button>
-
-
 
 {this.state.todos.map((todo) =>
   <Todo key={todo.id} id={todo.id} completed={todo.completed}
     text={todo.text} deleteTodo={this.deleteTodo} />
 )}
-      </section>
+
 
 </div>
 

@@ -13,7 +13,7 @@ body {
  
  }
  .text {
-     margin-top: 100px;
+     margin-top: 20px;
  }
 
 
@@ -43,25 +43,29 @@ body {
      border:none;
      padding: 10px;
      margin-left: 20px;
+     font-family: Courier New, monospace;
  }
  
- /* button:hover {
-     background-color: #EAB464;
- } */
- 
+
  input {
      width: 20px;
      height: 40px;
-     
+     font-family: Courier New, monospace;
+     color: purple;
  }
+
+ 
  
  #checked {
      margin-left: 20px;
  }
 
- #checked:checked p {
+
+ /* https://codersblock.com/blog/checkbox-trickery-with-css/ */
+ .check:checked + p {
     text-decoration: line-through;
-    color: white;
+    text-decoration-color: purple;
  }
- 
+
+
  
